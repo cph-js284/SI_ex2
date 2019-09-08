@@ -20,7 +20,7 @@ sudo docker build -t grpcserver .
 ```
 sudo docker run -it --rm -p 6789:6789 --link mysql01 grpcserver
 ```
-5) Navigate to the client folder. Build the GRpc-client container:
+5) In a new terminal. Navigate to the client folder. Build the GRpc-client container:
 ```
 sudo docker build -t grpcclient .
 ```
