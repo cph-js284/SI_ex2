@@ -1,0 +1,4 @@
+Peter¤Peter@hotmail.com¤Some Road 1.¤textFile
+Poul¤Poul@gmail.com¤Some other Road 2.¤textFile
+Mary¤Mary@cphmail.com¤Diff addresse Road 3.¤textFile
+Jane¤Peter@keamail.com¤Makeup Street 4a.¤textFile

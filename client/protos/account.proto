@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option csharp_namespace = "Accounting";
+
+service AccountInfo {
+    rpc GetAccountInfo (AccountRequest) returns (stream Info);
+}
+
+message AccountRequest {
+    string command = 1;
+}
+
+message Info {
+   string Name = 1;
+   string Email = 2;
+   string Address = 3;
+   string StoreType = 4;
+}
