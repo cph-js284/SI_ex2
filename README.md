@@ -24,7 +24,7 @@ sudo docker run -it --rm -p 6789:6789 --link mysql01 grpcserver
 ```
 sudo docker build -t grpcclient .
 ```
-6) Start the client:
+6) Start the client. The client is using GRpc to make the server query the data and return it. Running this command will out 8 lines to the console, 4 from a the textfile, 4 from the database:
 ```
 sudo docker run --rm grpcclient
 ```
