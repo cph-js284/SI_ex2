@@ -27,7 +27,7 @@ sudo docker build -t grpcclient .
 6) Start the client. The client is using GRpc to make the server query the data and return it. Running this command will out 8 lines to the console, 4 from a the textfile, 4 from the database.
 You will need the ipaddress of the machine running the server container (linux: host-I) (windows: ipconfig /all).
 ```
-sudo docker run --rm grpcclient
+sudo docker run -it --rm grpcclient
 ```
 
 # Clean up
