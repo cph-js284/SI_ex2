@@ -10,25 +10,37 @@ namespace client
     {
         static async Task Main(string[] args)
         {
-            Channel channel = new Channel("192.168.0.11:6789", ChannelCredentials.Insecure);
-            AccountRequest AR = new AccountRequest();
-            AR.Command =" Not really used for anything";
-            var client = new AccountInfo.AccountInfoClient(channel);
-
-            using (var reply = client.GetAccountInfo(AR))
+            System.Console.WriteLine("Enter server IP-Address to establish connection. The port is hard coded to 6789 (reasons)");
+            var ipadr = Console.ReadLine();
+            try
             {
-                var responseStream = reply.ResponseStream;
-                StringBuilder responseLog = new StringBuilder("Response: =============================== " + '\n');
+                Channel channel = new Channel(ipadr+":6789", ChannelCredentials.Insecure);
+                AccountRequest AR = new AccountRequest();
+                AR.Command =" Not really used for anything";
+                var client = new AccountInfo.AccountInfoClient(channel);
 
-                while (await responseStream.MoveNext())
+                using (var reply = client.GetAccountInfo(AR))
                 {
-                    Info infostr = responseStream.Current;
-                    responseLog.Append(infostr.ToString() + '\n');
+                    var responseStream = reply.ResponseStream;
+                    StringBuilder responseLog = new StringBuilder("Response: =============================== " + '\n');
+
+                    while (await responseStream.MoveNext())
+                    {
+                        Info infostr = responseStream.Current;
+                        responseLog.Append(infostr.ToString() + '\n');
+                    }
+
+                System.Console.WriteLine(responseLog.ToString());
+
+                Console.WriteLine("done ...");
                 }
-
-            System.Console.WriteLine(responseLog.ToString());
-
-            Console.WriteLine("done ...");
+                
+            }
+            catch (System.Exception ex)
+            {
+                
+                System.Console.WriteLine("meh");
+                throw ex;
             }
         }
     }
