@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="google.protobuf" Version="3.9.1" />
+    <PackageReference Include="google.protobuf" Version="3.15.0" />
     <PackageReference Include="grpc" Version="2.23.0" />
     <PackageReference Include="grpc.core" Version="2.23.0" />
     <PackageReference Include="grpc.tools" Version="2.23.0">
